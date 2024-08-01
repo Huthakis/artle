@@ -1,4 +1,4 @@
 # artle
 Wordle type clone for art and art prices
 
-Currently using the "Art Price Dataset" from [kaggle](https://www.kaggle.com/datasets/flkuhm/art-price-dataset), contributed by [Fl.Kuhm](https://www.kaggle.com/flkuhm)
+Currently using data from the  "art_auction_valuation" repository on [GitHub](https://github.com/jasonshi10/art_auction_valuation), created by [Jason Shi](https://github.com/jasonshi10)
