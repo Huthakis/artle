@@ -1,8 +1,8 @@
 from flask import Flask, redirect, render_template, request
-from funs import get_clue, questioner, remove_singles
+from funs import get_clue, remove_singles
+from random2 import randint
 
 import pandas as pd
-import random as rd
 
 # Configure application
 app = Flask(__name__)
@@ -29,7 +29,7 @@ art_df = pd.read_csv('sdata.txt', sep='\t', usecols=useful_cols)
 art_df = remove_singles(art_df)
 
 # Set random number
-rand_number = rd.randint(0, len(art_df) + 1)
+rand_number = randint(0, len(art_df) + 1)
 
 # Get information random art
 art_name = art_df.name.iloc[rand_number]

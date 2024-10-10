@@ -1,4 +1,4 @@
-# Functions for shiny app
+# Functions for artle app
 
 # Packages
 import pandas as pd
