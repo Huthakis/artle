@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name = "viewport" content="initial-scale=1, width=device-width">
+        <link href="./../static/styles.css" rel="stylesheet">
+        <title>artle</title>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1>artle</h1>
+        </div>
+        <div class="container">
+
+            <div class="section">
+                <h2>Correct!</h2>            
+                <img src="{{ art_url }}" alt="{{ art_name }}">
+            </div>
+
+            <div class="section">
+                <h3>Information</h3>
+                <table>
+                    <!-- Loop through clues -->
+                    {% for info in information %}
+                    <tr>
+                        <td>{{ info }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>This art sold for: {{ "${:,.2f}".format(art_price) }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <p>Data Source: <a href="https://github.com/jasonshi10/art_auction_valuation" target="_blank">Jason Shi. Art Auction Valuation</a></p>
+    </footer>
+</html>
