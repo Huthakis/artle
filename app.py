@@ -35,7 +35,6 @@ rand_number = randint(0, len(art_df) + 1)
 art_name = art_df.name.iloc[rand_number]
 art_url = art_df.source.iloc[rand_number]
 art_price = art_df.price.iloc[rand_number]
-print(art_price)
 
 # Initalise global variables
 tolerance = 0.1
@@ -57,7 +56,7 @@ def index():
         return render_template('index.html', art_name=art_name, art_url=art_url, outcomes=outcomes, clues=clues)
     else:
         # Get clue information
-        for i in range(counter):
+        for i in range(5):
             clues.append(get_clue(art_df, rand_number, (i + 1)))
         return render_template('over.html', art_name=art_name, art_url=art_url, clues=clues, art_price=art_price)
 
