@@ -9,8 +9,8 @@ This web application uses 7 files:
 		- The setup code loads the art data and randomly selects a row to be used for the game
 		- app.route('/') contains logic for rendering the index.html page until the user is out of rounds, then the over.html page is rendered
 		- app.route('/guess') contains logic for checking the guess against the art price, renders the winner.html page if the guess is correct (to within 10%), otherwise returns the too high/low result, increments the round counter, and redirects to app.route('/')
-2. art_data.csv / art.db
-	- Data about the artwork, contains multiple columns of information, including a link to an online image of the artwork. Modified from the original source by updating links from http to https, removal of artists with only one piece of artwork, replacing non ascii characters with their closest equivalent,and stored in a SQLite database
+2. art_data.csv
+	- Data about the artwork, contains multiple columns of information, including a link to an online image of the artwork. Modified from the original source by updating links from http to https, removal of artists with only one piece of artwork, and replaced non ascii characters with their closest equivalent
 4. static/styles.css
 	- CSS style page to main consistent styling between pages.
 5. index.html
