@@ -1,5 +1,4 @@
 from flask import Flask, redirect, render_template, request
-from funs import get_clue, remove_singles
 from random2 import randint
 
 import pandas as pd
