@@ -1,43 +1,13 @@
-appnope==0.1.4
-asttokens==2.4.1
-blinker==1.8.2
-certifi==2024.7.4
-click==8.1.7
-comm==0.2.2
-debugpy==1.8.2
-decorator==5.1.1
-executing==2.0.1
-Flask==3.0.3
-ipykernel==6.29.5
-ipython==8.26.0
-itsdangerous==2.2.0
-jedi==0.19.1
-Jinja2==3.1.4
-jupyter_client==8.6.2
-jupyter_core==5.7.2
-MarkupSafe==3.0.1
-matplotlib-inline==0.1.7
-nest-asyncio==1.6.0
-numpy==2.1.2
-packaging==24.1
-pandas==2.2.3
-parso==0.8.4
-pexpect==4.9.0
-platformdirs==4.2.2
-prompt_toolkit==3.0.47
-psutil==6.0.0
-ptyprocess==0.7.0
-pure-eval==0.2.2
-Pygments==2.18.0
-python-dateutil==2.9.0.post0
-pytz==2024.2
-pyzmq==26.0.3
-random2==1.0.2
-six==1.16.0
-stack-data==0.6.3
-tornado==6.4.1
-traitlets==5.14.3
-tzdata==2024.2
-wcwidth==0.2.13
-Werkzeug==3.0.4
-wheel @ file:///opt/homebrew/Cellar/python%403.12/3.12.4/libexec/wheel-0.43.0-py3-none-any.whl#sha256=ff23205a590f2b902a2a21151019e96b93ab4a1409d7c9748b6bd210f4c0f44d
+blinker @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_d64vvpf_j3/croot/blinker_1696539070114/work
+click @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_61srkg7e2e/croot/click_1698129815327/work
+Flask @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b6zka5i2cn/croot/flask_1716545886197/work
+Flask-SQLAlchemy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_214y9q2o4g/croot/flask-sqlalchemy_1712567274846/work
+greenlet @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_516imz09pb/croot/greenlet_1702059966336/work
+gunicorn @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_51vg37qcbj/croot/gunicorn_1720002508347/work
+itsdangerous @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_00jdi1gu23/croot/itsdangerous_1716533346702/work
+Jinja2 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_44yzu12j7f/croot/jinja2_1716993410427/work
+MarkupSafe @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_a84ni4pci8/croot/markupsafe_1704206002077/work
+packaging @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_81ri4yfpjw/croot/packaging_1720101866878/work
+SQLAlchemy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_3frqduvs8h/croot/sqlalchemy_1725885054432/work
+typing_extensions @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_93dg13ilv4/croot/typing_extensions_1715268840722/work
+Werkzeug @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_5bnbxlhunm/croot/werkzeug_1716533322814/work
