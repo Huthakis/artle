@@ -11,22 +11,7 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Load data
-useful_cols = [
-    'artist',
-    'country',
-    'yearOfBirth',
-    'yearOfDeath',
-    'name',
-    'year',
-    'price',
-    'material',
-    'height',
-    'width',
-    'link',
-    'source',
-]
-art_df = pd.read_csv('sdata.txt', sep='\t', usecols=useful_cols)
-art_df = remove_singles(art_df)
+art_df = pd.read_csv('art_data.csv')
 
 # Set random number
 rand_number = randint(0, len(art_df) + 1)
@@ -41,6 +26,30 @@ tolerance = 0.1
 counter = 1
 clues = []
 outcomes = {}
+
+# Function to provide clues
+def get_clue(data, rand_number, rounds):
+    # Local variables
+    artist = data.artist.iloc[rand_number]
+    price = data.price.iloc[rand_number]
+
+    # Control flow with match-case 
+    match rounds:
+        case 1:
+            return f'The art is called: {data.name.iloc[rand_number]}'
+        case 2:
+            return f'The artist is: {data.country.iloc[rand_number]}'
+        case 3:
+            if pd.isna(data.yearOfDeath.iloc[rand_number]):
+                return 'The artist is alive.'
+            else:
+                return f'The artist died in: {data.yearOfDeath.iloc[rand_number]}'
+        case 4:
+            return f'The artist is: {artist}'
+        case 5:
+            other_prices = data[data['artist'] == artist].price
+            selection = other_prices[other_prices != price].sample(n=1).values[0]
+            return f'Other art by this artist has sold for: ${selection}'
 
 @app.route('/')
 def index():
@@ -72,6 +81,10 @@ def guess():
     else:
         try:
             guess = float(guess)
+            if len(outcomes) != 0:
+                for guessed in outcomes.values():
+                    if guess == guessed['guess']:
+                        return redirect('/')
         except ValueError:
             return redirect('/')
         
