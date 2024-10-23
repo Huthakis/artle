@@ -15,10 +15,16 @@ art_df = pd.read_csv('art_data.csv')
 # Set random number
 rand_number = randint(0, len(art_df) + 1)
 
-# Get information random art
-art_name = art_df.name.iloc[rand_number]
-art_url = art_df.source.iloc[rand_number]
+# Get information on random art
+artist = art_df.artist.iloc[rand_number]
+art_name = art_df.title.iloc[rand_number]
+art_url = art_df.image.iloc[rand_number]
 art_price = art_df.price.iloc[rand_number]
+art_low = art_df.low_estimate.iloc[rand_number]
+art_high = art_df.high_estimate.iloc[rand_number]
+art_date = art_df.date.iloc[rand_number]
+art_other = art_df.loc[(art_df['artist'] == artist) & (art_df['price'] != art_price),
+                       'price'].sample(n=1).values[0]
 
 # Initalise global variables
 tolerance = 0.1
@@ -28,27 +34,18 @@ outcomes = {}
 
 # Function to provide clues
 def get_clue(data, rand_number, rounds):
-    # Local variables
-    artist = data.artist.iloc[rand_number]
-    price = data.price.iloc[rand_number]
-
     # Control flow with match-case 
     match rounds:
         case 1:
-            return f'The art is called: {data.name.iloc[rand_number]}'
+            return f'The art is called: {art_name}'
         case 2:
-            return f'The artist is: {data.country.iloc[rand_number]}'
-        case 3:
-            if pd.isna(data.yearOfDeath.iloc[rand_number]):
-                return 'The artist is alive.'
-            else:
-                return f'The artist died in: {data.yearOfDeath.iloc[rand_number]}'
-        case 4:
             return f'The artist is: {artist}'
+        case 3:
+            return f'The auction category is: {data.category.iloc[rand_number]}'
+        case 4:
+            return f'Other art by this artist has sold for: ${art_other}'
         case 5:
-            other_prices = data[data['artist'] == artist].price
-            selection = other_prices[other_prices != price].sample(n=1).values[0]
-            return f'Other art by this artist has sold for: ${selection}'
+            return f'The auction price was estimated to be between ${art_low} and ${art_high}'
 
 @app.route('/')
 def index():
@@ -66,7 +63,7 @@ def index():
         # Get clue information
         for i in range(5):
             clues.append(get_clue(art_df, rand_number, (i + 1)))
-        return render_template('over.html', art_name=art_name, art_url=art_url, clues=clues, art_price=art_price)
+        return render_template('over.html', art_name=art_name, art_url=art_url, clues=clues, art_price=art_price, art_date=art_date)
 
 
 @app.route('/guess', methods=['POST'])
@@ -91,7 +88,7 @@ def guess():
             information = []
             for i in range(5):
                 information.append(get_clue(art_df, rand_number, (i + 1)))
-            return render_template('winner.html', art_name=art_name, art_url=art_url, information=information, art_price=art_price)
+            return render_template('winner.html', art_name=art_name, art_url=art_url, information=information, art_price=art_price, art_date=art_date, guess=guess)
             
         elif guess > art_price:
             result = 'Too High'

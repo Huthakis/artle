@@ -15,12 +15,16 @@
 
             <div class="section">
                 <h2>Correct!</h2>            
-                <img src="{{ art_url }}" alt="{{ art_name }}">
+                <img src="{{ art_url }}" alt="{{ art_name }}"  height="320">
             </div>
 
             <div class="section">
-                <h3>Information</h3>
                 <table>
+                    <thead>
+                        <tr>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
                     <!-- Loop through clues -->
                     {% for info in information %}
                     <tr>
@@ -28,7 +32,10 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td>This art sold for: {{ "${:,.2f}".format(art_price) }}</td>
+                        <td>You're guess: {{ "${:,.2f}".format(guess) }} </td>
+                    </tr>
+                    <tr>
+                        <td>This art sold for: {{ "${:,.2f}".format(art_price) }} in {{ art_date }} </td>
                     </tr>
                 </table>
             </div>
@@ -36,6 +43,6 @@
     </body>
 
     <footer>
-        <p>Data Source: <a href="https://github.com/jasonshi10/art_auction_valuation" target="_blank">Jason Shi. Art Auction Valuation</a></p>
+        <h6>Data Source: SothebysData_clean.csv from <a href="https://github.com/georgiecoetzer/What-Makes-Art-Valuable/tree/main" target="_blank">georgiecoetzer / What-Makes-Art-Valuable</a></h6>
     </footer>
 </html>

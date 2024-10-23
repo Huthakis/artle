@@ -18,17 +18,17 @@ body {
 }
 
 .header {
-    background-color: #477bff;
+    background-color: #005615;
     color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
+    margin-bottom: 0.25rem;
+    padding: 0.25rem;
     text-align: center;
 }
 
 .section {
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     padding-top: 0.5rem;
 }
 
@@ -39,8 +39,19 @@ body {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 44px;
 }
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
 
 button, input[type="submit"] {
     background-color: #d9edff;
@@ -80,4 +91,3 @@ table td {
 tbody tr:nth-of-type(odd) {
     background-color: rgb(179, 208, 255, 0.3)
 }
-

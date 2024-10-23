@@ -2,7 +2,7 @@
 
 <html lang="en">
     <head>
-        <meta name = "viewport" content="initial-scale=1, width=device-width">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
         <link href="./../static/styles.css" rel="stylesheet">
         <title>artle</title>
     </head>
@@ -15,11 +15,7 @@
 
             <div class="section">
                 <h2>How much is art worth?</h2>
-            </div>
-            
-            <!-- Section for art image-->
-            <div class="section">
-                <img src="{{ art_url }}" alt="{{ art_name }}">
+                <img src="{{ art_url }}" alt="{{ art_name }}" height="320">
             </div>
 
             <div class="section">
@@ -73,6 +69,6 @@
     </body>
 
     <footer>
-        <p>Data Source: <a href="https://github.com/jasonshi10/art_auction_valuation" target="_blank">Jason Shi. Art Auction Valuation</a></p>
+        <h6>Data Source: SothebysData_clean.csv from <a href="https://github.com/georgiecoetzer/What-Makes-Art-Valuable/tree/main" target="_blank">georgiecoetzer / What-Makes-Art-Valuable</a></h6>
     </footer>
 </html>
