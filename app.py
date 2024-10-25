@@ -23,29 +23,29 @@ outcomes = {}
 # Set random number
 rand_number = randint(0, len(art_df) + 1)
 # Get information on random art
-artist = art_df.artist.iloc[rand_number]
-art_name = art_df.title.iloc[rand_number]
-art_url = art_df.image.iloc[rand_number]
-art_price = art_df.price.iloc[rand_number]
-art_date = art_df.date.iloc[rand_number]
+artist = art_df.Artist.iloc[rand_number]
+art_name = art_df.Title.iloc[rand_number]
+art_url = art_df.Image.iloc[rand_number]
+art_price = art_df['Selling Price'].iloc[rand_number]
+art_date = art_df.Date.iloc[rand_number]
 
 
 
 
 # Function to provide clues
 def get_clue(data, rand_number, rounds):
-    artist = data.artist.iloc[rand_number]
-    price = data.price.iloc[rand_number]
+    artist = data.Artist.iloc[rand_number]
+    price = data['Selling Price'].iloc[rand_number]
     # Control flow with match-case 
     match rounds:
         case 1:
-            return f'The art is called: {data.title.iloc[rand_number]}'
+            return f'The art is titled as: {data.Title.iloc[rand_number]}'
         case 2:
-            return f'The auction category is: {data.category.iloc[rand_number]}'
+            return f'The auction category is: {data.Category.iloc[rand_number]}'
         case 3:
-             return f'The artist is: {artist}'
+             return f'The artist is listed as: {artist}'
         case 4:
-            art_other = data.loc[(data['artist'] == artist) & (data['price'] != price), 'price'].sample(n=1).values[0]
+            art_other = data.loc[(data['Artist'] == artist) & (data['Selling Price'] != price), 'Selling Price'].sample(n=1).values[0]
             return f'Other art by this artist has auctioned for: ${art_other:,.2f}'
         case 5:
             art_low = art_df.low_estimate.iloc[rand_number]
