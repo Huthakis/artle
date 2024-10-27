@@ -1,5 +1,5 @@
 # artle
-#### Video Demo: [Link to video demo] (URL HERE)
+#### Video Demo: [artle - Final Project for CS50](https://youtu.be/zqYcBOo1Nd8)
 #### Description:
 Artle is a new twist on the Wordle model, focusing on art and its auction prices. On each launch the user is presented with a piece of artwork and challenged to correctly guess its auction price (to within 5%), they are given up to six attempts. After each guess, the user receives feedback indicating if their guess was too high or too low. If incorrect, a clue related to the auction, artist, or painting itself will appear to help guide subsequent guesses. The game ends when the user guesses correctly or is out of rounds, at this time an ending screen page will load.
 

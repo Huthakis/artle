@@ -44,9 +44,7 @@
                     <label for="guess">Make a Guess</label>
                     <input type="number" autocomplete="off" id="guess" name="guess" placeholder="" autofocus required>
                     <button type="submit">Submit</button>
-            </div>
-
-            <div class="section">
+            
                 {% if clues | length > 0 %}
                 <table>
                     <thead>
@@ -69,6 +67,8 @@
     </body>
 
     <footer>
-        <h6>Data Source: SothebysData_clean.csv from <a href="https://github.com/georgiecoetzer/What-Makes-Art-Valuable/tree/main" target="_blank">georgiecoetzer / What-Makes-Art-Valuable</a></h6>
+        <div>
+            <h6>Data Source: SothebysData_clean.csv from <a href="https://github.com/georgiecoetzer/What-Makes-Art-Valuable/tree/main" target="_blank">georgiecoetzer / What-Makes-Art-Valuable</a></h6>
+        </div>
     </footer>
 </html>
