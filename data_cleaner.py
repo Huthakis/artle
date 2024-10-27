@@ -4,8 +4,8 @@ import pandas as pd
 url = 'https://raw.githubusercontent.com/georgiecoetzer/What-Makes-Art-Valuable/refs/heads/main/Clean%20Data/SothebysData_clean.csv'
 
 # Useful columns
-usecols = ['Artist', 'Title', 'Date', 'Category', 'Auction Name', 'Sold',
-           'Selling Price', 'low_estimate', 'high_estimate', 'Image']
+usecols = ['Artist', 'Title', 'Date', 'Location', 'Category', 'Auction Name',
+           'Sold', 'Selling Price', 'low_estimate', 'high_estimate', 'Image']
 
 # Load data using url
 art_df = pd.read_csv(url, usecols=usecols)

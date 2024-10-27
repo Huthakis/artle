@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, session
 from random2 import randint
 
 import pandas as pd
@@ -41,7 +41,7 @@ def get_clue(data, rand_number, rounds):
         case 1:
             return f'The art is titled as: {data.Title.iloc[rand_number]}'
         case 2:
-            return f'The auction category is: {data.Category.iloc[rand_number]}'
+            return f'This art was sold in {data.Location.iloc[rand_number]} under the category: {data.Category.iloc[rand_number]}'
         case 3:
              return f'The artist is listed as: {artist}'
         case 4:
